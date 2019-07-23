@@ -21,7 +21,8 @@ namespace WindowsFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             Form_rpg create = new Form_rpg();
-            create.Show();
+            create.ShowDialog();
+            reloadUsers();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace WindowsFormsApp2
             h = characters.Text;
             Save.JSONDeseralize(h);
             world start = new world();
-            start.Show();
+            start.ShowDialog();
 
         }
 
@@ -39,17 +40,52 @@ namespace WindowsFormsApp2
 
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
+        public void MainMenu_Load(object sender, EventArgs e)
         {
+            reloadUsers();
+            Item.makeItems();
+        }
+
+        public void reloadUsers()
+        {
+            characters.Items.Clear();
+
             DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo("saves");
             FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles();
 
             foreach (FileInfo foundFile in filesInDir)
             {
                 string fullName = foundFile.FullName;
-                characters.Items.Add(foundFile);
+                characters.Items.Add(foundFile.Name);
+            }
+
+            characters.Text = "";
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("are you sure you want to delete this character?", "Delete character?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Save.Delete(characters.Text);
+                dialogResult = MessageBox.Show("", "File has been deleted", MessageBoxButtons.OK);
+                if (dialogResult == DialogResult.OK)
+                {
+                    //Application.Restart();
+                    reloadUsers();
+                }
+
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show("File has not been deleted");
             }
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Item.sMagPot.printInfo();
         }
     }
 }

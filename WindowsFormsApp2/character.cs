@@ -17,7 +17,12 @@ namespace WindowsFormsApp2
         public int MaxMP { get; set; }
         public int Mons { get; set; }
         public int Exp { get; set; }
-        public character(int h, int m, string c, string n)
+        public int Damage { get; set; }
+        public int SpecialLight { get; set; }
+        public int SpecialDark { get; set; }
+        public int Defense { get; set; }
+        public bool TutorialComplete { get; set; }
+        public character(int h, int m, string c, string n, int w, int dar, int dmg)
         {
             HP = h;
             MP = m;
@@ -27,13 +32,46 @@ namespace WindowsFormsApp2
             MaxHP = h;
             Exp = 0;
             Mons = 0;
+            SpecialLight = w;
+            SpecialDark = dar;
+            Damage = dmg;
+            TutorialComplete = false;
         }
         public string printInfo()
         {
             string stats = "";
             stats += "Name: " + Name + "\r\nClass: " + Class + "\r\nHealth: " + HP + "/" + MaxHP + "\r\nMagic Points: " + MP + "/" + MaxMP + "\r\nTotal Exp: " + Exp + "\r\nMons: " + Mons;
-        
+            stats += "\r\nDamage: " + Damage + "\r\nLight Power: " + SpecialLight + "\r\nDark Power: " + SpecialDark;
             return stats;
+        }
+
+        public void necroFight()
+        {
+
+        }
+
+        public void Backpack()
+        {
+            string [] packItems = new string[30];
+        }
+        public void equipment()
+        {
+            if (Class == "Warrior")
+            {
+                //Sword weapon = new Sword();
+            }
+            else if (Class == "Mage" || Class == "Necromancer" || Class == "Healer")
+            {
+                //Staff staff = new Staff();
+            }
+            else if (Class == "Rogue")
+            {
+                //Dagger dagger = new Dagger();
+            }
+            else if(Class == "Ranger")
+            {
+                //Bow bow = new Bow();
+            }
         }
     }
 }

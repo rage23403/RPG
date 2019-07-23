@@ -37,5 +37,13 @@ namespace WindowsFormsApp2
         {
             ch1 = JsonConvert.DeserializeObject<character>(File.ReadAllText("saves\\"+ name));
         }
+        public static void Delete(string path)
+        {
+            File.Delete("saves\\" + path);
+        }
+        public static character getCharacter()
+        {
+            return ch1;
+        }
     }
 }

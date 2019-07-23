@@ -33,6 +33,7 @@
             this.charClasses = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.charCreate = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // text_name
@@ -79,6 +80,7 @@
             // 
             // charCreate
             // 
+            this.charCreate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.charCreate.Location = new System.Drawing.Point(69, 217);
             this.charCreate.Name = "charCreate";
             this.charCreate.Size = new System.Drawing.Size(75, 23);
@@ -87,16 +89,29 @@
             this.charCreate.UseVisualStyleBackColor = true;
             this.charCreate.Click += new System.EventHandler(this.charCreate_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(12, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(352, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "NOTE: the character can only have at maximum 10 character in it\'s name";
+            // 
             // Form_rpg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(620, 418);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.charCreate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.charClasses);
             this.Controls.Add(this.char_name);
             this.Controls.Add(this.text_name);
+            this.ForeColor = System.Drawing.SystemColors.Control;
             this.Name = "Form_rpg";
             this.Text = "character creator";
             this.Load += new System.EventHandler(this.Form_rpg_Load);
@@ -112,5 +127,6 @@
         private System.Windows.Forms.ComboBox charClasses;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button charCreate;
+        private System.Windows.Forms.Label label2;
     }
 }

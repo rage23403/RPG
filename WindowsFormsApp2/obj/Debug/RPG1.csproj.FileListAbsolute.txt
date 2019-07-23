@@ -1,7 +1,6 @@
 c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
 c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
 c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
-c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\RPG1.csprojResolveAssemblyReference.cache
 c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.MainMenu.resources
 c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form_rpg.resources
 c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
@@ -11,3 +10,4 @@ c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\W
 c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.dll
 c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.xml
 c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.world.resources
+c:\users\derek\onedrive\documents\visual studio 2017\Projects\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\RPG1.csprojResolveAssemblyReference.cache

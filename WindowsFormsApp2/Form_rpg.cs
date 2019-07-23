@@ -13,7 +13,7 @@ namespace WindowsFormsApp2
 {
     public partial class Form_rpg : Form
     {
-
+        Random ran = new Random();
         public Form_rpg()
         {
             InitializeComponent();
@@ -66,55 +66,74 @@ namespace WindowsFormsApp2
             {
                 charClass = "Healer";
             }
-            
+            if(char_name.Text.Length > 10)
+            {
+                MessageBox.Show("you cannot have a name that long");
+            }
+            else
+            {
+                createCharacter(charClass, char_name.Text);
+            }
             /*
             StreamWriter File = new StreamWriter("saves\\playerStats.txt");
             File.Write("");
             File.Close();
             MessageBox.Show("");
             */
-            createCharacter(charClass, char_name.Text);
             
         }
         public void createCharacter(string Class, string name)
         {
+           
             int hp = 0;
             int mp = 0;
+            int white = 0;
+            int dark = 0;
+            int damage = 1;
 
             if(Class == "Warrior")
             {
-                hp = 10;
-                mp = 0;
+                hp = ran.Next(5) + 10;
+                damage = ran.Next(3) + 5;
             }
             else if(Class == "Mage")
             {
-                hp = 4;
-                mp = 2;
+                hp = ran.Next(2) + 4;
+                mp = ran.Next(3) + 2;
+                dark = ran.Next(3) + 6;
             }
             else if (Class == "Ranger")
             {
-                hp = 6;
-                mp = 0;
+                hp = ran.Next(3) + 6;
+                damage = ran.Next(4) + 6;
             }
             else if (Class == "Necromancer")
             {
-                hp = 2;
-                mp = 5;
+                hp = ran.Next(2) + 3;
+                mp = ran.Next(3) + 5;
+                dark = ran.Next(2) + 4;
+                white = ran.Next(3) + 2;
             }
             else if (Class == "Rogue")
             {
-                hp = 5;
-                mp = 1;
+                hp = ran.Next(4) + 4;
+                mp = ran.Next(2) + 1;
+                damage = ran.Next(3) + 4;
+                dark = ran.Next(5) + 2;
             }
             else if (Class == "Healer")
             {
-                hp = 4;
-                mp = 2;
+                hp = ran.Next(3) + 4;
+                mp = ran.Next(3) + 2;
+                damage = ran.Next(4) + 3;
+                white = ran.Next(5) + 6;
             }
 
-            character ch1 = new character(hp, mp, Class, name);
+            character ch1 = new character(hp, mp, Class, name, white, dark, damage);
             Save.JSONSeralize(ch1);
-            Application.Restart();
+            //Application.Restart();
+
+            Close();
         }
     }
 }
