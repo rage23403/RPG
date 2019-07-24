@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp2
 {
-    public abstract class Item
+    public abstract class ItemPrefabs
     {
         public static Potions sPot;
         public static Potions Pot;

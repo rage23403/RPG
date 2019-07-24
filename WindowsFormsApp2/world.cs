@@ -16,7 +16,7 @@ namespace WindowsFormsApp2
 
         public bool aPress = false;
         public bool bPress = false;
-        private int tree = 0;
+        public bool inFight = false;
         character player = new character(0, 0, "", "", 0, 0, 0);
         public world()
         {
@@ -26,7 +26,7 @@ namespace WindowsFormsApp2
 
             if (!player.TutorialComplete)
             {
-                tree = 1;
+                player.tree = 1;
                 AdventureDialogue.Text = "do you want to do the tutorial? (you will get bonus exp for doing so)";
             }
         }
@@ -52,6 +52,7 @@ namespace WindowsFormsApp2
 
             aPress = true;
             checkTree();
+            aPress = false;
         }
 
 
@@ -59,6 +60,7 @@ namespace WindowsFormsApp2
         {
             bPress = true;
             checkTree();
+            bPress = false;
         }
 
         private void AdventureDialogue_TextChanged(object sender, EventArgs e)
@@ -73,40 +75,71 @@ namespace WindowsFormsApp2
             if (aPress)
             {
                 yes();
-                tree++;
-                aPress = false;
+                player.tree++;
             }
             else if (bPress)
             {
                 no();
-                tree += 2;
-                bPress = false;
+                player.tree += 2;
             }
-
-
         }
         void checkTree()
         {
-            if(tree == 1)
+            if (!inFight)
             {
-                LoadTutorial();
+                if (player.tree == 1)
+                {
+                    LoadTutorial();
+                }
+                else if (player.tree == 2)
+                {
+
+                }
             }
+        }
+        void Tutorial()
+        {
+
         }
         public void yes()
         {
-            if (!player.TutorialComplete)
+            if (player.tree == 1)
             {
                 AdventureDialogue.Text = "ok.";
+                
+            }
+            if(player.tree == 2)
+            {
+                player.TutorialComplete = true;
             }
         }
         public void no()
         {
-            if (!player.TutorialComplete)
+            if (player.tree == 1)
             {
                 AdventureDialogue.Text = "nevermind then";
+                player.TutorialComplete = true;
             }
-
         }
 
+        public void dialogueChange(string d)
+        {
+            AdventureDialogue.Text = d;
+        }
+
+        public void tutorialFight()
+        {
+            inFight = true;
+
+            AdventureDialogue.Text = "You start the fight with the sample enemy.";
+            if (inFight)
+            {
+                tutorialFight();
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

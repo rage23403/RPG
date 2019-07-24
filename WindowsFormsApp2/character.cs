@@ -22,6 +22,7 @@ namespace WindowsFormsApp2
         public int SpecialDark { get; set; }
         public int Defense { get; set; }
         public bool TutorialComplete { get; set; }
+        public int tree { get; set; }
         public character(int h, int m, string c, string n, int w, int dar, int dmg)
         {
             HP = h;
@@ -36,6 +37,7 @@ namespace WindowsFormsApp2
             SpecialDark = dar;
             Damage = dmg;
             TutorialComplete = false;
+            tree = 0;
         }
         public string printInfo()
         {

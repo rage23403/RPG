@@ -44,7 +44,7 @@ namespace WindowsFormsApp2
         public void MainMenu_Load(object sender, EventArgs e)
         {
             reloadUsers();
-            Item.makeItems();
+            ItemPrefabs.makeItems();
         }
 
         public void reloadUsers()
@@ -86,7 +86,7 @@ namespace WindowsFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Item.sMagPot.printInfo();
+            ItemPrefabs.sMagPot.printInfo();
         }
     }
 }

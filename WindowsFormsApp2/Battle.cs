@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp2
 {
-    class CheckEvent
+    class Battle
     {
-        
+
     }
 }
