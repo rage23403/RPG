@@ -13,6 +13,7 @@ namespace WindowsFormsApp2
 {
     public partial class MainMenu : Form
     {
+        public static world start;
         public MainMenu()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace WindowsFormsApp2
             string h;
             h = characters.Text;
             Save.JSONDeseralize(h);
-            world start = new world();
+            start = new world();
             start.ShowDialog();
 
         }

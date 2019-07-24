@@ -80,6 +80,7 @@
             this.AdventureDialogue.ReadOnly = true;
             this.AdventureDialogue.Size = new System.Drawing.Size(225, 216);
             this.AdventureDialogue.TabIndex = 3;
+            this.AdventureDialogue.TextChanged += new System.EventHandler(this.AdventureDialogue_TextChanged);
             // 
             // label2
             // 
