@@ -16,7 +16,8 @@ namespace WindowsFormsApp2
 
         public bool aPress = false;
         public bool bPress = false;
-        character player = new character(0,0,"","",0,0,0);
+        private int tree = 0;
+        character player = new character(0, 0, "", "", 0, 0, 0);
         public world()
         {
             InitializeComponent();
@@ -25,10 +26,11 @@ namespace WindowsFormsApp2
 
             if (!player.TutorialComplete)
             {
+                tree = 1;
                 AdventureDialogue.Text = "do you want to do the tutorial? (you will get bonus exp for doing so)";
             }
         }
-        
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -42,30 +44,54 @@ namespace WindowsFormsApp2
 
         private void world_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void aButton_Click(object sender, EventArgs e)
         {
+
             aPress = true;
-            System.Threading.Thread.Sleep(100);
-            aPress = false;
+            checkTree();
         }
-        
+
 
         private void bButton_Click(object sender, EventArgs e)
         {
             bPress = true;
-            System.Threading.Thread.Sleep(100);
-            bPress = false;
+            checkTree();
         }
 
         private void AdventureDialogue_TextChanged(object sender, EventArgs e)
         {
-            Thread etc = new Thread(CheckEvent.LoadTutorial);
-            etc.Start();
+
+
         }
-        
+        public void LoadTutorial()
+        {
+
+
+            if (aPress)
+            {
+                yes();
+                tree++;
+                aPress = false;
+            }
+            else if (bPress)
+            {
+                no();
+                tree += 2;
+                bPress = false;
+            }
+
+
+        }
+        void checkTree()
+        {
+            if(tree == 1)
+            {
+                LoadTutorial();
+            }
+        }
         public void yes()
         {
             if (!player.TutorialComplete)
